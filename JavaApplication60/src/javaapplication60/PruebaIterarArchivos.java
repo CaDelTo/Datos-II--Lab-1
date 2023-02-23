@@ -27,10 +27,7 @@ public class PruebaIterarArchivos {
 
         
         imprimirArbol(root, "");
-        // Obtener los valores de los nodos hoja
         List<String> valoresHoja = obtenerValoresHoja(root);
-
-        // Imprimir los valores de los nodos hoja
         for (String valor : valoresHoja) {
             System.out.println(valor);
         }
@@ -63,21 +60,14 @@ public class PruebaIterarArchivos {
     }
     public static List<String> obtenerValoresHoja(Node nodoActual) {
         List<String> valoresHoja = new ArrayList<>();
-
-        // Si el nodo actual es hoja (no tiene hijos)
         if (nodoActual.getChilds().isEmpty()) {
-            // Obtener el contenido del archivo con el nombre del nodo
             String contenido = obtenerContenidoArchivo(nodoActual.getData());
-            // Si el contenido no es nulo, agregarlo a la lista de valores hoja
             if (contenido != null) {
                 valoresHoja.add(contenido);
             }
         }
-        // Si el nodo actual tiene hijos
         else {
-            // Para cada hijo del nodo actual
             for (Node hijo : nodoActual.getChilds()) {
-                // Llamar al método recursivamente para obtener los valores hoja del subárbol
                 valoresHoja.addAll(obtenerValoresHoja(hijo));
             }
         }
@@ -85,34 +75,26 @@ public class PruebaIterarArchivos {
         return valoresHoja;
     }
 
-    // Método para obtener el contenido de un archivo
     public static String obtenerContenidoArchivo(String nombreArchivo) {
         String contenido = null;
 
         try {
-            // Crear un objeto File con el nombre del archivo
             File archivo = new File(nombreArchivo);
-            // Crear un objeto FileReader con el archivo
             FileReader fr = new FileReader(archivo);
-            // Crear un objeto BufferedReader con el FileReader
             BufferedReader br = new BufferedReader(fr);
             String linea;
         StringBuilder sb = new StringBuilder();
 
-        // Leer cada línea del archivo y agregarla al StringBuilder
         while ((linea = br.readLine()) != null) {
             sb.append(linea);
             sb.append(System.lineSeparator());
         }
 
-        // Cerrar el BufferedReader y el FileReader
         br.close();
         fr.close();
 
-        // Asignar el contenido del StringBuilder a la variable de contenido
         contenido = sb.toString();
     } catch (Exception e) {
-        // Si ocurre algún error al leer el archivo, imprimir el mensaje de error
         System.err.println("Error al leer el archivo " + nombreArchivo + ": " + e.getMessage());
     }
 
