@@ -29,6 +29,10 @@ public class Main extends javax.swing.JFrame {
         
         this.setSize(x, y);
         //this.setResizable(false);
+        
+        
+        // Jorge debes hallar la manera para que el tamaño de los nodos cambien con respecto a la pantalla y la cantidad de nodos
+        // Tamaño de los nodos = (TamañoPantalla * 2/5)/CantidadNodos -- Esta formula me la acabo de inventar mientras escribo esto asi que ten cuidado bro
     }
 
     /**
