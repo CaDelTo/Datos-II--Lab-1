@@ -4,9 +4,8 @@
  */
 package datos.ii.lab.pkg1;
 
-import java.awt.Dimension;
+import java.awt.Insets;
 import java.awt.Toolkit;
-import javax.swing.JFrame;
 
 /**
  *
@@ -20,6 +19,16 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         
+
+        this.setAlwaysOnTop(true);
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        int x = (int)tk.getScreenSize().getWidth();
+        int y = (int)tk.getScreenSize().getHeight();
+        Insets sncMax = Toolkit.getDefaultToolkit().getScreenInsets(getGraphicsConfiguration());
+        int taskBarSize = sncMax.bottom;
+        
+        this.setSize(x, y);
+        //this.setResizable(false);
     }
 
     /**
@@ -32,17 +41,17 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("f");
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 783, Short.MAX_VALUE)
+            .addGap(0, 1920, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 568, Short.MAX_VALUE)
+            .addGap(0, 1080, Short.MAX_VALUE)
         );
 
         pack();
@@ -74,22 +83,11 @@ public class Main extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        JFrame f = new JFrame();        
-        f.setTitle("Set Size According to Screen"); 
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-        f.setVisible(true);
-        //APPROACH - 1 : Using getScreenSize() method
-        Toolkit tk=Toolkit.getDefaultToolkit(); //Initializing the Toolkit class.
-        Dimension screenSize = tk.getScreenSize(); //Get the Screen resolution of our device.
-        f.setSize(screenSize.width,screenSize.height); //Set the width and height of the JFrame.
-        //APPROACH - 2 : Using MAXIMIZED_BOTH
-        f.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Main().setVisible(true);
-                
-                
             }
         });
     }

@@ -20,8 +20,8 @@ public class Node {
         return data;
     }
 
+    public void addChild(Node node) {
+        this.childs.add(node);
+    }
     
-
-
-
 }
