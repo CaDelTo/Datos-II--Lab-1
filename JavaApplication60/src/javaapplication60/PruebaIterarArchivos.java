@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package javaapplication60;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -18,13 +17,9 @@ public class PruebaIterarArchivos {
 
 
     public static void main(String[] args) {
-        Node root = new Node("Raíz");
+        Node root = new Node("Root");
 
-        String rutaPrincipal = "src\\Genero";
-
-        
-        Fill(root, rutaPrincipal);
-
+        Fill(root, "Datos-II--Lab-1\\JavaApplication60\\src\\Genero");
         
         imprimirArbol(root, "");
         List<String> valoresHoja = obtenerValoresHoja(root);
@@ -35,13 +30,12 @@ public class PruebaIterarArchivos {
 
     public static void Fill(Node actNode, String actPath) {
         File[] archivos = new File(actPath).listFiles();
+        for (File archivoActual : archivos) {
+            Node newNode = new Node(archivoActual.getName());
 
-        for (File archivo : archivos) {
-            Node newNode = new Node(archivo.getName());
-
-            if (archivo.isDirectory()) {
+            if (archivoActual.isDirectory()) {
                 actNode.addChild(newNode);
-                Fill(newNode, archivo.getPath());
+                Fill(newNode, archivoActual.getPath());
             }
             
             else {
@@ -79,6 +73,8 @@ public class PruebaIterarArchivos {
         String contenido = null;
 
         try {
+            //Aca debo buscar la ruta del archivo mas bien
+            //Da error pq no encuentra el archivo en si, debo guardar la ruta primero
             File archivo = new File(nombreArchivo);
             FileReader fr = new FileReader(archivo);
             BufferedReader br = new BufferedReader(fr);
