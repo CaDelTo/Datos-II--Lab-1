@@ -52,6 +52,14 @@ class cliTree extends Tree{
     }
     public void modifyClient(Clients tarClient, String tarData, String newValue){
     //Ahorita se me ocurre
-    
     }
+    public Clients getRoot() {
+        return root;
+    }
+
+    
+}
+
+class catProtree extends Tree{
+    
 }
