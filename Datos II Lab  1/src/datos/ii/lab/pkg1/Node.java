@@ -31,13 +31,15 @@ class Products extends Node{
 }
 
 class ProCategories extends Node{
-    private String id, cateName;
-    private ArrayList<ProCategories> childs = new ArrayList<ProCategories>();
+    String id, cateName;
+    ArrayList<ProCategories> childs = new ArrayList<ProCategories>();
     
-    public ProCategories(String data,String id, String cateName){
-        super(data);
+    public ProCategories(String id, String cateName){
+        super(id);
         this.id = id;
         this.cateName = cateName;
+        this.childs = null;
+
     }
 
     public String getId(){
@@ -46,6 +48,19 @@ class ProCategories extends Node{
     public String getCateName(){
         return this.cateName;
     }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setCateName(String cateName) {
+        this.cateName = cateName;
+    }
+
+    public void setChilds(ArrayList<ProCategories> childs) {
+        this.childs = childs;
+    }
+    
     
     
 }
