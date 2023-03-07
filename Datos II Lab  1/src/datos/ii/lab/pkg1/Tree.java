@@ -10,4 +10,28 @@ package datos.ii.lab.pkg1;
  */
 public class Tree {
     private Node root;
+    
+    public Tree(){
+        this.root = null;
+    }
+    
+    public void insert(Node Root, String tarNode){
+        if(root == null){
+            root = Root;
+        }else{
+            if (root.getData() == tarNode){
+                Root.addChild(tarNode);
+                return;
+            }
+            
+            for(Node child : Root.getChilds()){
+                insert(child, tarNode);
+            }
+        }
+    }
+    
+}
+
+class cTree extends Tree{
+    
 }
