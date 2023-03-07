@@ -3,28 +3,16 @@ package datos.ii.lab.pkg1;
 import java.util.ArrayList;
 
 public class Node {
-    private String data;
-    private ArrayList<Node> childs = new ArrayList<Node>();
+    String data;
     
     public Node(String data){
         this.data = data;
-        this.childs = new ArrayList<Node>();
     }
     public Node(){}
 
     public String getData(){
         return data;
     }
-
-    public void addChild(String data) {
-        this.childs.add(new Node(data));
-    }
-
-    public ArrayList<Node> getChilds() {
-        return childs;
-    }
-    
-    
     
 }
 class Products extends Node{
@@ -63,11 +51,147 @@ class ProCategories extends Node{
 }
 
 class Clients extends Node{
-    String id, idCat, name, lastName, age, birthDate, gender, civilState, phoneNum, perEmail, eduLevel, incomeRange, address;
+    String idCat, name, lastName, age, birthDate, gender, civilState, phoneNum, perEmail, eduLevel, incomeRange, address;
     Boolean noEmail, noPhone, noSMS, noMail;
+    ArrayList <Clients> childs = new ArrayList<Clients>();
+
+
+
+    public Clients(String id, String idCat, String name, String lastName, String age, String birthDate, String gender, String civilState, String phoneNum, String perEmail, String eduLevel, String incomeRange, String Address
+    ,Boolean noEmail, Boolean noPhone, Boolean noSMS, Boolean noMail){
+        super(id);
+        this.idCat = idCat;
+        this.name = name;
+        this.lastName = lastName;
+        this.age = age;
+        this.birthDate = birthDate;
+        this.gender = gender; 
+        this.civilState = civilState;
+        this.phoneNum = phoneNum;
+        this.perEmail = perEmail;
+        this.eduLevel = eduLevel;
+        this.incomeRange = incomeRange;
+        this.address = Address;
+        this.noEmail = noEmail;
+        this.noPhone = noPhone;
+        this.noSMS = noSMS;
+        this.noMail = noMail;
+
+    }
+
+
+
+    public String getIdCat() {
+        return idCat;
+    }
+
+
+
+    public String getName() {
+        return name;
+    }
+
+
+
+    public String getLastName() {
+        return lastName;
+    }
+
+
+
+    public String getAge() {
+        return age;
+    }
+
+
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+
+
+    public String getGender() {
+        return gender;
+    }
+
+
+
+    public String getCivilState() {
+        return civilState;
+    }
+
+
+
+    public String getPhoneNum() {
+        return phoneNum;
+    }
+
+
+
+    public String getPerEmail() {
+        return perEmail;
+    }
+
+
+
+    public String getEduLevel() {
+        return eduLevel;
+    }
+
+
+
+    public String getIncomeRange() {
+        return incomeRange;
+    }
+
+
+
+    public String getAddress() {
+        return address;
+    }
+
+
+
+    public Boolean getNoEmail() {
+        return noEmail;
+    }
+
+
+
+    public Boolean getNoPhone() {
+        return noPhone;
+    }
+
+
+
+    public Boolean getNoSMS() {
+        return noSMS;
+    }
+
+
+
+    public Boolean getNoMail() {
+        return noMail;
+    }
+
+
+
+    public ArrayList<Clients> getChilds() {
+        return childs;
+    }
+
+
+
+    public void addChild(Clients A) {
+        this.childs.add(A);
+    }
+    
+
 
 }
 
+
 class CliCategories extends Node{
-    
+    private ArrayList<CliCategories> childs = new ArrayList<CliCategories>();
 }
