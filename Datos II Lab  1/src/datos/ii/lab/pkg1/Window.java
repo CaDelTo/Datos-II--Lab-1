@@ -13,6 +13,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+
+import javafx.scene.input.KeyEvent;
 /**
  *
  * @author Elsup
@@ -24,6 +26,8 @@ public class Window extends JFrame{
     public JPanel panel2;
     public JTabbedPane tabbedPaneA;
     public JPanel userCreatePanel;
+    public JPanel searchUserPanel;
+
     public Window(){
         dim = tk.getScreenSize();
         setSize(dim);
@@ -47,7 +51,7 @@ public class Window extends JFrame{
         
         tabbedPaneA.add("Create User Categories", null);
         tabbedPaneA.add("Create User", userCreatePanel);
-        tabbedPaneA.add("Search User", null);
+        tabbedPaneA.add("Search User", searchUserPanel);
         tabbedPaneA.add("Path", null);
         tabbedPaneA.add("Edit User", null);
         tabbedPaneA.add("Set User", null);
@@ -57,6 +61,7 @@ public class Window extends JFrame{
     private void initComponents(){
         setPanel1();
         userCreatePanel();
+        searchUserPanel();
         tabbedPanesUsers();
         
     }
@@ -189,8 +194,31 @@ public class Window extends JFrame{
 
         userCreatePanel.setBackground(Color.lightGray);
         
-        
+        JButton createButton = new JButton("Create");
+        createButton.setBounds((dim.width/2)-100, dim.height-200, 200, 100);
+        createButton.setFont(new Font("arial", Font.BOLD, 30));
+        userCreatePanel.add(createButton);
         
     }
     
+    private void searchUserPanel(){
+        searchUserPanel = new JPanel();
+        searchUserPanel.setLayout(null);
+        searchUserPanel.setBackground(Color.lightGray);
+        JLabel Search = new JLabel("Search: ");
+            Search.setBounds(80, dim.height/10 + (dim.height/20)*-1 , 300, 100);
+            Search.setFont(new Font("arial", Font.PLAIN, 30));
+            searchUserPanel.add(Search);
+            
+            JTextField SearchA = new JTextField();
+                SearchA.setBounds(Search.getX()+ dim.width/10, Search.getY() + 15 , 300, 50);
+                searchUserPanel.add(SearchA);
+
+        JButton search = new JButton("Enter");
+        search.setBounds(SearchA.getX(), Search.getY() + 60, 100, 50);
+        searchUserPanel.add(search);
+
+        
+
+    }
 }
