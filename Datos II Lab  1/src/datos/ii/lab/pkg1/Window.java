@@ -8,7 +8,9 @@ import javax.swing.JLabel;
 
 import java.awt.*;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 /**
@@ -64,7 +66,6 @@ public class Window extends JFrame{
         
         this.getContentPane().add(panel);
         panel.setBackground(Color.LIGHT_GRAY);
-        buttons();
         
     }
 
@@ -78,7 +79,7 @@ public class Window extends JFrame{
             Name.setFont(new Font("arial", Font.PLAIN, 30));
             userCreatePanel.add(Name);
             JTextField NameArea = new JTextField();
-                NameArea.setBounds(Name.getX()+ dim.width/5, Name.getY() + 10 , 300, 50);
+                NameArea.setBounds(Name.getX()+ dim.width/5, Name.getY() + 15 , 300, 50);
                 userCreatePanel.add(NameArea);
 
         JLabel lastName = new JLabel("Last Name");
@@ -86,7 +87,7 @@ public class Window extends JFrame{
             lastName.setFont(new Font("arial", Font.PLAIN, 30));
             userCreatePanel.add(lastName);
             JTextField lastNameA = new JTextField();
-                lastNameA.setBounds(Name.getX()+ dim.width/5, lastName.getY() + 10 , 300, 50);
+                lastNameA.setBounds(Name.getX()+ dim.width/5, lastName.getY() + 15 , 300, 50);
                 userCreatePanel.add(lastNameA);
             
         JLabel age = new JLabel("Age");
@@ -94,7 +95,7 @@ public class Window extends JFrame{
             age.setFont(new Font("arial", Font.PLAIN, 30));
             userCreatePanel.add(age);
             JTextField ageA = new JTextField();
-                ageA.setBounds(Name.getX()+ dim.width/5, age.getY() + 10 , 300, 50);
+                ageA.setBounds(Name.getX()+ dim.width/5, age.getY() + 15 , 300, 50);
                 userCreatePanel.add(ageA);
 
         JLabel birthDate = new JLabel("Birth Date");
@@ -102,7 +103,7 @@ public class Window extends JFrame{
             birthDate.setFont(new Font("arial", Font.PLAIN, 30));
             userCreatePanel.add(birthDate);
             JTextField birthDateA = new JTextField();
-                birthDateA.setBounds(Name.getX()+ dim.width/5, birthDate.getY() + 10 , 300, 50);
+                birthDateA.setBounds(Name.getX()+ dim.width/5, birthDate.getY() + 15 , 300, 50);
                 userCreatePanel.add(birthDateA);
 
         JLabel civState = new JLabel("Civil State");
@@ -110,7 +111,7 @@ public class Window extends JFrame{
             civState.setFont(new Font("arial", Font.PLAIN, 30));
             userCreatePanel.add(civState);
             JTextField civStateA = new JTextField();
-                civStateA.setBounds(Name.getX()+ dim.width/5, civState.getY() + 10 , 300, 50);
+                civStateA.setBounds(Name.getX()+ dim.width/5, civState.getY() + 15 , 300, 50);
                 userCreatePanel.add(civStateA);
 
         JLabel phoneNumber = new JLabel("Phone Number");
@@ -118,7 +119,7 @@ public class Window extends JFrame{
             phoneNumber.setFont(new Font("arial", Font.PLAIN, 30));
             userCreatePanel.add(phoneNumber);
             JTextField phoneNumberA = new JTextField();
-                phoneNumberA.setBounds(Name.getX()+ dim.width/5, phoneNumber.getY() + 10 , 300, 50);
+                phoneNumberA.setBounds(Name.getX()+ dim.width/5, phoneNumber.getY() + 15 , 300, 50);
                 userCreatePanel.add(phoneNumberA);
 
         JLabel Email = new JLabel("Email");
@@ -126,7 +127,7 @@ public class Window extends JFrame{
             Email.setFont(new Font("arial", Font.PLAIN, 30));
             userCreatePanel.add(Email);
             JTextField EmailA = new JTextField();
-                EmailA.setBounds(Name.getX()+ dim.width/5, Email.getY() + 10 , 300, 50);
+                EmailA.setBounds(Name.getX()+ dim.width/5, Email.getY() + 15 , 300, 50);
                 userCreatePanel.add(EmailA);
                 
         JLabel eduLevel = new JLabel("Educational Level");
@@ -134,7 +135,7 @@ public class Window extends JFrame{
             eduLevel.setFont(new Font("arial", Font.PLAIN, 30));
             userCreatePanel.add(eduLevel);
             JTextField eduLevelA = new JTextField();
-                eduLevelA.setBounds(Name.getX()+ dim.width/5, eduLevel.getY() + 10 , 300, 50);
+                eduLevelA.setBounds(Name.getX()+ dim.width/5, eduLevel.getY() + 15 , 300, 50);
                 userCreatePanel.add(eduLevelA);
 
         JLabel incomeRange = new JLabel("Income Range");
@@ -142,7 +143,7 @@ public class Window extends JFrame{
             incomeRange.setFont(new Font("arial", Font.PLAIN, 30));
             userCreatePanel.add(incomeRange);
             JTextField incomeRangeA = new JTextField();
-                incomeRangeA.setBounds(Name.getX()+ dim.width/5, incomeRange.getY() + 10 , 300, 50);
+                incomeRangeA.setBounds(Name.getX()+ dim.width/5, incomeRange.getY() + 15 , 300, 50);
                 userCreatePanel.add(incomeRangeA);
 
         JLabel address = new JLabel("Address");
@@ -150,50 +151,46 @@ public class Window extends JFrame{
             address.setFont(new Font("arial", Font.PLAIN, 30));
             userCreatePanel.add(address);
             JTextField addressA = new JTextField();
-                addressA.setBounds(Name.getX()+ dim.width/5, address.getY() + 10 , 300, 50);
+                addressA.setBounds(Name.getX()+ dim.width/5, address.getY() + 15 , 300, 50);
                 userCreatePanel.add(addressA);
         
         JLabel noEmail = new JLabel("No Email Contact");
             noEmail.setBounds(80, (dim.height/10) + (dim.height/20)*9, 300, 100);
             noEmail.setFont(new Font("arial", Font.PLAIN, 30));
             userCreatePanel.add(noEmail);
-            //JTextField NameArea = new JTextField();
-                NameArea.setBounds(Name.getX()+ dim.width/5, Name.getY() + 10 , 300, 50);
-                userCreatePanel.add(NameArea);
+            JCheckBox noEmailB = new JCheckBox();
+                noEmailB.setBounds(Name.getX()+ dim.width/5, noEmail.getY() + 15 , 300, 50);
+                userCreatePanel.add(noEmailB);
 
         JLabel noPhone = new JLabel("No Phone Contact");
             noPhone.setBounds(80, (dim.height/10) + (dim.height/20)*10, 300, 100);
             noPhone.setFont(new Font("arial", Font.PLAIN, 30));
             userCreatePanel.add(noPhone); 
-            //JTextField NameArea = new JTextField();
-                NameArea.setBounds(Name.getX()+ dim.width/5, Name.getY() + 10 , 300, 50);
-                userCreatePanel.add(NameArea);  
+            JCheckBox noPhoneB = new JCheckBox();
+                noPhoneB.setBounds(Name.getX()+ dim.width/5, noPhone.getY() + 15 , 300, 50);
+                userCreatePanel.add(noPhoneB);
             
         JLabel noSMS = new JLabel("No SMS Contact");
             noSMS.setBounds(80, (dim.height/10) + (dim.height/20)*11, 300, 100);
             noSMS.setFont(new Font("arial", Font.PLAIN, 30));
             userCreatePanel.add(noSMS); 
-            //JTextField NameArea = new JTextField();
-                NameArea.setBounds(Name.getX()+ dim.width/5, Name.getY() + 10 , 300, 50);
-                userCreatePanel.add(NameArea);
+            JCheckBox noSMSB = new JCheckBox();
+                noSMSB.setBounds(Name.getX()+ dim.width/5, noSMS.getY() + 15 , 300, 50);
+                userCreatePanel.add(noSMSB);
                 
 
         JLabel noMail = new JLabel("No Mail Contact");
             noMail.setBounds(80, (dim.height/10) + (dim.height/20)*12, 300, 100);
             noMail.setFont(new Font("arial", Font.PLAIN, 30));
             userCreatePanel.add(noMail);    
-            //JTextField NameArea = new JTextField();
-                NameArea.setBounds(Name.getX()+ dim.width/5, Name.getY() + 10 , 300, 50);
-                userCreatePanel.add(NameArea);
+            JCheckBox noMailB = new JCheckBox();
+                noMailB.setBounds(Name.getX()+ dim.width/5, noMail.getY() + 15 , 300, 50);
+                userCreatePanel.add(noMailB);
 
         userCreatePanel.setBackground(Color.lightGray);
         
         
         
     }
-    private void buttons(){
-        JButton bt1 = new JButton();
-        bt1.setBounds(dim.width/4, dim.height/4, dim.height/4, dim.width/5);
-        panel.add(bt1);
-    }
+    
 }
