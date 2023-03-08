@@ -8,12 +8,15 @@ package datos.ii.lab.pkg1;
  *
  * @author Elsup
  */
-public class DatosIILab1 {
+public class Main {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Window w1 = new Window();
+        
+        w1.setVisible(true);
     }
     
 }
