@@ -1,18 +1,19 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
 package datos.ii.lab.pkg1;
 
-import java.util.ArrayList;
+/**
+ *
+ * @author Elsup
+ */
+public class DatosIILab1 {
 
-public class Main {
-    public static void main(String[] args){
-        cliTree A = new cliTree();
-        A.insertClient(null, "a", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
-        A.insertClient(A.root, "B", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, A.root);
-        ArrayList<Clients> B = new ArrayList<Clients>();
-        B = A.root.childs;
-
-        System.out.println(B.get(0).data);
-
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
     }
-
-
+    
 }
