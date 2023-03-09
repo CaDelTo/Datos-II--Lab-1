@@ -38,19 +38,17 @@ public class Window extends JFrame{
         initComponents();
         JTabbedPane tabbedPane = new JTabbedPane();
         add(tabbedPane);
-        JLabel label1 = new JLabel("Users");
         JLabel label2 = new JLabel("Products");
         
         tabbedPane.add("Users", tabbedPaneA);
         tabbedPane.add("Products", label2);
         
-        
     }
     private void tabbedPanesUsers(){
         tabbedPaneA = new JTabbedPane();
-        
+        UserCreatePanel  panel2 = new UserCreatePanel();
         tabbedPaneA.add("Create User Categories", null);
-        tabbedPaneA.add("Create User", userCreatePanel);
+        tabbedPaneA.add("Create User", panel2);
         tabbedPaneA.add("Search User", searchUserPanel);
         tabbedPaneA.add("Path", null);
         tabbedPaneA.add("Edit User", null);
@@ -199,6 +197,7 @@ public class Window extends JFrame{
         createButton.setFont(new Font("arial", Font.BOLD, 30));
         userCreatePanel.add(createButton);
         
+        
     }
     
     private void searchUserPanel(){
@@ -209,7 +208,6 @@ public class Window extends JFrame{
             Search.setBounds(80, dim.height/10 + (dim.height/20)*-1 , 300, 100);
             Search.setFont(new Font("arial", Font.PLAIN, 30));
             searchUserPanel.add(Search);
-            
             JTextField SearchA = new JTextField();
                 SearchA.setBounds(Search.getX()+ dim.width/10, Search.getY() + 15 , 300, 50);
                 searchUserPanel.add(SearchA);
@@ -217,10 +215,6 @@ public class Window extends JFrame{
         JButton search = new JButton("Enter");
         search.setBounds(SearchA.getX(), Search.getY() + 60, 100, 50);
         searchUserPanel.add(search);
-
-        
-        
-
     }
     
 }

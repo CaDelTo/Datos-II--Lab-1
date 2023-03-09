@@ -22,11 +22,5 @@ public class Main {
         w1.setVisible(true);
     }
 
-    public void insertClient(ArrayList list){
-        int lastPosition = list.size();
-        System.out.println(lastPosition);
-    }
-
-    
 }
 

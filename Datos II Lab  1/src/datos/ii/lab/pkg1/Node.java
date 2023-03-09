@@ -63,14 +63,6 @@ class ProCategories extends Node{
         super(id);
         this.cateName = cateName;
         this.childs = null;
-
-    }
-
-    public String getId(){
-        return this.id;
-    }
-    public String getCateName(){
-        return this.cateName;
     }
 
     public void setId(String id) {
@@ -81,9 +73,6 @@ class ProCategories extends Node{
         this.cateName = cateName;
     }
 
-    public void setChilds(ArrayList<ProCategories> childs) {
-        this.childs = childs;
-    }
     
     
     
@@ -116,160 +105,14 @@ class Clients extends Node{
         this.noMail = noMail;
 
     }
-
-    public String getIdCat() {
-        return idCat;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public String getBirthDate() {
-        return birthDate;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public String getCivilState() {
-        return civilState;
-    }
-
-    public String getPhoneNum() {
-        return phoneNum;
-    }
-
-    public String getPerEmail() {
-        return perEmail;
-    }
-
-    public String getEduLevel() {
-        return eduLevel;
-    }
-
-    public String getIncomeRange() {
-        return incomeRange;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setIdCat(String idCat) {
-        this.idCat = idCat;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
-
-    public void setBirthDate(String birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public void setCivilState(String civilState) {
-        this.civilState = civilState;
-    }
-
-    public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
-    }
-
-    public String getCelPhoneNumber() {
-        return celPhoneNumber;
-    }
-
-    public void setCelPhoneNumber(String celPhoneNumber) {
-        this.celPhoneNumber = celPhoneNumber;
-    }
-
-    public void setPerEmail(String perEmail) {
-        this.perEmail = perEmail;
-    }
-
-    public void setEduLevel(String eduLevel) {
-        this.eduLevel = eduLevel;
-    }
-
-    public void setIncomeRange(String incomeRange) {
-        this.incomeRange = incomeRange;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public void setNoEmail(Boolean noEmail) {
-        this.noEmail = noEmail;
-    }
-
-    public void setNoPhone(Boolean noPhone) {
-        this.noPhone = noPhone;
-    }
-
-    public void setNoSMS(Boolean noSMS) {
-        this.noSMS = noSMS;
-    }
-
-    public void setNoMail(Boolean noMail) {
-        this.noMail = noMail;
-    }
-
-    public void setChilds(ArrayList<Clients> childs) {
-        this.childs = childs;
-    }
-
-    public Boolean getNoEmail() {
-        return noEmail;
-    }
-
-    public Boolean getNoPhone() {
-        return noPhone;
-    }
-
-    public Boolean getNoSMS() {
-        return noSMS;
-    }
-
-    public Boolean getNoMail() {
-        return noMail;
-    }
-
-    public ArrayList<Clients> getChilds() {
-        return childs;
-    }
-
-    public void addChild(Clients A) {
-        this.childs.add(A);
-    }
-    
-    
-
-
 }
 
 class CliCategories extends Node{
-    private ArrayList<CliCategories> childs = new ArrayList<CliCategories>();
+    ArrayList<CliCategories> childs = new ArrayList<CliCategories>();
+    String id;
+    public CliCategories(String id, String name){
+        super(name);
+        this.id = id;
+        this.childs = null;
+    }
 }

@@ -12,7 +12,7 @@ public class Users {
     public void insertClient(String ida, String idCat, String name, String lastName, String age, String birthDate, String gender, String civilState, String phoneNum, String celPhoneNumber, String perEmail, String eduLevel, String incomeRange, String address, Boolean noEmail, Boolean noPhone, Boolean noSMS, Boolean noMail){
         int lastPosition = this.ClientsList.size();
         if (lastPosition != 0){
-            String lastId = this.ClientsList.get(lastPosition).data;
+            String lastId = this.ClientsList.get(lastPosition-1).data;
             int actualId = Integer.parseInt(lastId) + 1;
             Clients Node = new Clients(idCat + Integer.toString(actualId), idCat, name, lastName, age, birthDate, gender, civilState, phoneNum, celPhoneNumber, perEmail, eduLevel, incomeRange, address, noEmail, noPhone, noSMS, noMail);
             this.ClientsList.add(Node);

@@ -12,7 +12,7 @@ public class Items {
     public void insertClient(String idCat, String name, String shortDesc, String longDesc, String path){
         int lastPosition = this.ProductsList.size();
         if(lastPosition!=0){
-            String lastId = this.ProductsList.get(lastPosition).data;
+            String lastId = this.ProductsList.get(lastPosition-1).data;
             int actualId = Integer.parseInt(lastId) + 1;
             Products Node = new Products(idCat +Integer.toString(actualId), idCat, name, shortDesc, longDesc, path);
             this.ProductsList.add(Node);
