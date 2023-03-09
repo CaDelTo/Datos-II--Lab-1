@@ -47,13 +47,13 @@ public class Window extends JFrame{
     private void tabbedPanesUsers(){
         tabbedPaneA = new JTabbedPane();
         UserCreatePanel  panel2 = new UserCreatePanel();
+        UserSearchPanel panel3 = new UserSearchPanel();
+
         tabbedPaneA.add("Create User Categories", null);
         tabbedPaneA.add("Create User", panel2);
-        tabbedPaneA.add("Search User", searchUserPanel);
+        tabbedPaneA.add("Search User", panel3);
         tabbedPaneA.add("Path", null);
         tabbedPaneA.add("Edit User", null);
-        tabbedPaneA.add("Set User", null);
-        tabbedPaneA.add("", null);
 
     }
     private void initComponents(){
