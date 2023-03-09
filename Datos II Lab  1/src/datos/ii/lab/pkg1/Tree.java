@@ -4,8 +4,6 @@
  */
 package datos.ii.lab.pkg1;
 
-import javax.crypto.spec.RC2ParameterSpec;
-
 /**
  *
  * @author Elsup
